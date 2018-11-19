@@ -6,7 +6,7 @@ var router=express.Router();
 var LocalStrategy=require('passport-local').Strategy;
 
 module.exports=function(passport){
-    var passport=require('passport');
+    
     passport.serializeUser(function(user, done){
         done(null, user.id);
     });
@@ -27,4 +27,4 @@ module.exports=function(passport){
         }
         }
     ))
-}
+}   
