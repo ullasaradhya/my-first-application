@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="/scripts.js"></script>
+        <title>Welcome to upload files</title></head>
+    <body>
+        <h1>
+            Upload Files
+        </h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="pic" >
+            <select class="selectpicker" name="selectpicker">
+                <option value="iPOS" name="project">iPOS</option>
+                <option value="Terminal" name="project">Terminal</option>
+                <option value="Kiosk"name="project">Kiosk</option>
+                <option value="CIA-gDEP" name="project">CIA-gDEP</option>
+                <option value="iPAY" name="project">iPAY</option>
+                <option value="iMBAnking" name="project">iMBAnking</option>
+                <option value="PDS" name="project">PDS</option>
+              </select> 
+            <input type="submit">                       
+        </form>
+        <input type="submit" id="register" name="Register" onclick="window.location.href ='/register';"  value="Register">
+        <input type="submit" id="sample" name="Register"   value="Register">
+        
+        <span id="SecondsUntilExpire"  ></span>
+        <h5> <%=message %> </h5>
+            </body>
+<html>
