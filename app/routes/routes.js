@@ -24,8 +24,10 @@ router.post('/profile', function(req, res){
 });
 })
 router.get('/register', function(req, res){
-    console.log("Register Page Session ID"+req.cookies);
     res.render('form');    
+    
+
+
 });
 
 

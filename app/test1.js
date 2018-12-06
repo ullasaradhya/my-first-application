@@ -20,8 +20,6 @@ app.post('/upload', function(req, res) {
         case("iPOS") : path="controller"; break;
         case("Kiosk") : path="config"; break;
       }
-      
-
       let fileName=file.name;
         console.log(file.name);
         console.log(file.md5());
@@ -35,9 +33,19 @@ app.post('/upload', function(req, res) {
     console.log('file not found');
   }
 });  
+app.get('/download', function(req, res){
+
+  console.log(req.body);
+  if(req.body.name=='jmeter'){
+  res.download('G://nodejs//code//app//config//DummySamplerExample.jmx');
+  }
+  else{
+      res.send('File Not Found');
+  }
+} );
 
 app.get('/fileUpload', function(req, res){
-
+    
     res.render('fileUpload', {message : "Upload Files" });
     //res.sendFile(__dirname+'/index.html');
 });

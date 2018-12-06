@@ -2,17 +2,25 @@
 <html>
     <head>
             <title>Registration Form </title>
-            <script type="text/javascript" src="/scripts.js"></script>
+            <script type="text/javascript" src="/js/scripts.js"></script>
     </head>
     <body>
-        <form method="POST" action="/profile"></form>
+        <form method="POST" action="/doc">
             Name : <input type="text" name="name" id="name" />
         <br/>
+
+        
             EmpID : <input type="text" name="empid" id="empid" />
         <br/>
-            userid : <input type="text" name="userid" id="userid" />
+            Email : <input type="text" name="userid" placeholder="abc@integramicro.co.in/.com" id="userid" />
         <br/>
-            Submit : <input type="submit" name="submit" id="submit" >
-
+            Password : <input type="password" name="userid"  id="password" />
+        <br/>    
+            Confirm Password : <input type="password" name="userid"  id="confirm_password"  />
+            <span id="message"></span>
+        <br/>    
+            Submit : <input type="submit" onclick="window.location.href='/doc'" name="submit" id="submit" >
+        </form>
+        Download FIle<a href="/downloadFiles/DummySamplerExample.jmx"  value='fileDownload' name='jmeter' id='link_to_download'> click</a>
     </body>
 </html>
