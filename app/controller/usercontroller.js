@@ -16,8 +16,11 @@ module.exports.authenticate=function(username, password, retValue){
             if (err==null){
                 return retValue(-2);
             } 
-            if (err.code == 'ER_BAD_DB_ERROR' || err.code == 'ENOTFOUND' || err.code == 'ER_BAD_DB_ERROR') {
+            if (err.code == 'ER_SP_DOES_NOT_EXIST' || err.code == 'ENOTFOUND' || err.code == 'ER_BAD_DB_ERROR') {
                 return retValue(-1);
+            }
+            else{
+                return retValue(-3);
             }
         });
 }

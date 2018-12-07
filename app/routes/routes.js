@@ -9,6 +9,8 @@ router.get('/', function(req, res){
 });
 
 router.post('/profile', function(req, res){    
+    
+    console.log('Authnticate');
 
     userAccess.authenticate(req.body.username, req.body.password, function (userAuthenticate){
     switch(userAuthenticate){
@@ -21,6 +23,7 @@ router.post('/profile', function(req, res){
         break;
         default :res.render('home', {message : "Session Timeout"});
     }
+    
 });
 })
 router.get('/register', function(req, res){
