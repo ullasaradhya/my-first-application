@@ -1,15 +1,19 @@
 <html>
     <head>
-        <title> File Upload </title>
+        <title> Sample Web Page</title>
     </head>
     <body>
-            Button<input type="submit" value="download" onclick="href.location='/reg'" /> 
-            Register/Sign-Up<input type="submit" onclick="href.location='/reg'" value="register" />        
-        <br/>
-            <form method="GET" action="/download" >
-            Button<input type="submit" value="form" /> 
-        </form>
+        <form action="/reg" name="fileDownload"  method="POST">
+            <p>    <%=id[0] %>      </p>
+            <br/>
+            <p>    <%=id[1] %>      </p>
 
-    </body>
-    
+            <%   for (var i=0; i<id.length; i++ )     {      %>
+                    <%=fileName[i] %> <input type="submit"   value="download_files" id=id[i]>
+                 <br/>
+              <%  }       %>
+       <input type="submit" value="download_files" id='ipoas_1' name="downloads"  >
+        </form>
+        
+    </body>    
 </html>

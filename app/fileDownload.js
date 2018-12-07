@@ -19,7 +19,7 @@ app.get('/', function(req, res){
 app.get('/download', function(req, res){
 
     console.log(req.body.jmeter=='jmeter');
-    if(req.body.name=='jmeter'){
+    if(req.body.fileDownload=='jmeter'){
     res.download('G://nodejs//code//app//config//DummySamplerExample.jmx');
     }
     else{
