@@ -4,7 +4,9 @@ var session=require('express-session');
 var bodyParser=require('body-parser');
 var dbCheck=require('./config/db');
 var router=require('./routes/routes');
+var fileupload =require('express-fileupload');
 
+app.use(fileupload());
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended : true }));
 app.use(express.static(__dirname+'/views'));

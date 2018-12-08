@@ -14,10 +14,14 @@ module.exports = {
             dbConnection.query(queryData, function (err, rows) {
                 if (err) rejected(err);
                 else {
-                    if (!rows[0][0]) {
+                    if (!rows[0][0] || !rows[0]) {
+                        console.log('error');
                         rejected(err);
                     }
-                    else resolved(rows);
+                    else {
+                        console.log(rows+"db");
+                        resolved(rows);
+                    }                    
                 }
             });
         
