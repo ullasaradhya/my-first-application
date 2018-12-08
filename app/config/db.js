@@ -13,7 +13,8 @@ module.exports = {
             dbConnection.query(queryData, function (err, rows) {
                     if (err){
                     console.log("Error in rows checking "+err); rejected(err);}
-                    else {
+                    else {           
+                        
                         if (!rows[0][0] && !rows[0] && rows.affectedRows==1) {
                             console.log("Error in rows checking "+err);
                             rejected(err);
@@ -28,7 +29,7 @@ module.exports = {
                 })        
     }
 }
-module.exports.dbData(`call insertFileDetails('Release_not', 'iPOS', '//iPOS_Path','iPOS_1')`)
+module.exports.dbData(`call insertFileDetails('Release_not', 'iPOS', '//iPOS_Path','iPOS_10')`)
         .then(function(err, rows){
             if(err) console.log(err);
             else console.log(rows);
