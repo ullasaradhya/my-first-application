@@ -28,11 +28,11 @@ module.exports = {
                 })        
     }
 }
-module.exports.dbData(`call insertFileDetails('Release_not', 'iPOS', '//iPOS_Path','iPOS_1')`)
-        .then(function(err, rows){
-            if(err) console.log(err);
-            else console.log(rows);
-        });
+// module.exports.dbData(`call insertFileDetails('Release_not', 'iPOS', '//iPOS_Path','iPOS_1')`)
+//         .then(function(err, rows){
+//             if(err) console.log(err);
+//             else console.log(rows);
+//         });
 
 
 

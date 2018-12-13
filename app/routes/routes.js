@@ -15,22 +15,19 @@ router.post('/profile', function(req, res){
     userAccess.authenticate(req.body.username, req.body.password, function (userAuthenticate){
     switch(userAuthenticate){
         case 0: res.render('fileUpload',{message : "Log in Succesful"}); 
-        console.log("Req Session ID"+req.sessionID);        
+        req.session.info='123';
+        console.log("Req Session ID"+req.sessioninfo);        
         break;
         case -1: res.send('Datbase Connectivity Not Found, Check Database Configurations');                
         break;    
         case -2:  res.render('home', {message : "Invalid UserName/password"});
         break;
         default :res.render('home', {message : "Session Timeout"});
-    }
-    
+    }    
 });
 })
 router.get('/register', function(req, res){
     res.render('form');    
-    
-
-
 });
 
 

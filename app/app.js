@@ -20,6 +20,20 @@ app.use(session({
     }
 }));
 app.use('/', router);
+app.use('/', function(req, res, next){
+
+    if(req.session.info){
+        next();
+        console.log("Session ID exists "+req.session.info);
+    }
+    else{        
+        //req.session.info='123';
+        console.log("Session ID Creating Here "+req.session.info);
+        //console.log("User "+req.session.user)
+        res.redirect('/');
+    }
+});
+
 app.get('/id', function(req, res){
     res.render('home', {message : "hey"});
     console.log(req.sessionID);

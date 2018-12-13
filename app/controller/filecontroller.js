@@ -25,7 +25,7 @@ module.exports={
     db.dbData(query)
         .then(function(rows){
             console.log(rows)
-        }).catch(function(err){
+    }).catch(function(err){
             console.log(err);
         });
 

@@ -4,7 +4,7 @@ const bodyParser=require('body-parser');
 const app = express();
 const ip='127.0.0.1';
 const port=2000;
-var fileCont=require('./controller/filecontroller');
+
 app.use(bodyParser.urlencoded({extended : true }));
 app.set('view engine', 'ejs');
 // default options
@@ -12,7 +12,6 @@ app.use(fileUpload());
 
 app.post('/upload', function(req, res) {
     console.log(req.body.selectpicker);
-    fileCont.fileUploadingfunction(req);
     if (req.files){
       let file=req.files.pic;
       let project=req.body.selectpicker;
@@ -27,6 +26,7 @@ app.post('/upload', function(req, res) {
         file.mv(`G:/nodejs/code/app/${path}/${fileName}`, function(err){
           if(err) console.log("File Not Found");
           else console.log('Done');
+          res.render('fileUpload', {message : "Upload Files" });
         });
         res.send('Done');
   }

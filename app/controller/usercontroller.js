@@ -7,8 +7,9 @@ module.exports.authenticate=function(username, password, retValue){
     dbConfig.dbData(query)
         .then(function (rows) {                        
                 bcrypt.compare(password, rows[0][0].password, function(err, res){
-                    if (res==true)
+                    if (res==true){
                     return retValue(0);
+                    }
                     else
                     return retValue(-2);
                 } )                            
