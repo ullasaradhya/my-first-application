@@ -1,0 +1,10 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `insertFileDetails`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertFileDetails`(_name VARCHAR(50) , _projName VARCHAR(20) , _path VARCHAR(200), _index VARCHAR(20) )
+BEGIN
+    INSERT INTO files(file_name, project, file_path, file_index) VALUES(_name, _projName, _path, _index);
+    END$$
+
+DELIMITER ;
